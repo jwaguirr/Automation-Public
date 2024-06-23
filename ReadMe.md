@@ -3,7 +3,7 @@
 ## Overview
 ** This project was originially commited to a private repo on January 10, 2023. However, I re-commited without any changes to the code (besides deleting security issues) on June 23, 2024.  **
 
-This is my first project finished i August 10, 2022. This project is a Flask web application that interacts with a SQLite database and a serial device (like an LED light) to manage alarms. The system allows users to set and control alarms for different times and scenarios, such as weekdays, weekends, and nights. It is intended to run on a Raspberry Pi, utilizing its GPIO pins and serial interface for hardware control.
+This is my first project finished in August 10, 2022. This project is a Flask web application that interacts with a SQLite database and a serial device (like an LED light) to manage alarms. The system allows users to set and control alarms for different times and scenarios, such as weekdays, weekends, and nights. It is intended to run on a Raspberry Pi, utilizing its GPIO pins and serial interface for hardware control.
 
 ## Features
 - Set alarms for different times of the day (weekdays, weekends, nights).
