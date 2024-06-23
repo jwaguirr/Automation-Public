@@ -1,0 +1,23 @@
+<html lang = "en"> 
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    {% for item in data %}
+    <body>
+        <main class = "container" align = "center">
+            <a href = "/"><h1>Set a different alarm?</h1></a>
+            <section id = "times">
+                    <p >Prioritized Time: {{item[0]}}</p>
+                    <p>Weekday Mornings: {{item[1]}}</p>
+                    <p>Weekend Mornings: {{item[2]}}</p>
+                    <p>Weekday Nights: {{item[3]}}</p>
+                    <p>Weekend Nights: {{item[4]}}</p>
+                    <p>Alarms Status: {{alarm}}</p>
+            </section>
+
+        </main>
+    </body>
+    {%endfor%}
+</html>

@@ -1,0 +1,59 @@
+<html lang = "en">
+    {% for item in data %}
+    <head>
+        <title>JWS Room</title>
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class = "container" align = "center">
+                <h1>Alarm Times</h1>
+                <h3>Please enter in 12 Hour format</h3>
+                <a href = "/database" type = "button">Database</a>
+            </div>
+            
+            <main class = "container">
+                <section id = "form">
+                    <form action = "{{ url_for('index') }}" method = "POST" name = "timeForm" onchange="showDropInfo()">
+                    <label for="time">
+                        <h5>Prioritized Time</h5>
+                        <input type="time" id="prioritized" name="prioritized" value = "None"">
+                        <p  align = "center" >Will prioritize over other alarms</p>
+                    </label>
+                        <div class = "grid">
+                            <div class = "grid-item">
+                                <h5>Weekday Mornings (Turn On)</h5>
+                                <span><input type = "text" name = "weekdays" placeholder={{item[1]}} /></span><br>
+                                <p  align = "center">Powers off after an hour</p>
+                            </div>
+                            <div class = "grid-item">
+                                <h5>Weekday Nights (Turn Off)</h5>
+                                <span><input type = "text" name = "weekdayNights" placeholder={{item[3]}} /></span><br>
+                                <p  align = "center">Powers on two hours before</p>
+                            </div>
+                            <div class="grid-item">
+                                <h5>Weekend Mornings (Turn On)</h5>
+                                <span><input type = "text" name = "weekends" placeholder = {{item[2]}} /></span><br>
+                                <p  align = "center">Powers off after an hour</p>
+                            </div>
+                            <div class="grid-item">
+                                <h5>Weekend Nights (Turn Off)</h5>
+                                <span><input type = "text" name = "weekendNights" placeholder = {{item[4]}} /></span><br>
+                                <p  align = "center">Powers on two hours before</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <label>Update Alarms</label>
+                            <span class = "button"><input type = "submit" value = "Update Alarms"/></span>
+                            <label>{{alarm}}</label>
+                            <span class = "button"><input type = "submit" value = "Toggle" name = "toggleAlarms"/></span>
+                        </div>
+                </section>
+                
+            </main> 
+            </div>
+        </form>
+    </body>
+    {%endfor%}
+</html>
